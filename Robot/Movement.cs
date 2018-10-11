@@ -12,57 +12,57 @@ namespace Robot
         const int MAX_X = 4;
         const int MIN_Y = 0;
         const int MIN_X = 0;
+        private Coordinate _currentCoordinate;
 
-        private Direction currentDirection;
-        private Coordinate currentCoordinate;
+        public Direction CurrentDirection { get; set; }
 
         public Movement()
         {
-            currentDirection = Direction.North;
-            currentCoordinate = new Coordinate(0, 0);
+            CurrentDirection = Direction.North;
+            _currentCoordinate = new Coordinate(0, 0);
         }
 
         public Movement(Coordinate coordinate, Direction direction)
         {
-            currentDirection = direction;
-            currentCoordinate = coordinate;
+            CurrentDirection = direction;
+            _currentCoordinate = coordinate;
         }
 
         public Movement(Direction direction)
         {
-            currentDirection = direction;
-            currentCoordinate = new Coordinate(0, 0);
+            CurrentDirection = direction;
+            _currentCoordinate = new Coordinate(0, 0);
         }
 
         public void Move()
         {
-            switch (currentDirection)
+            switch (CurrentDirection)
             {
                 case Direction.North:
-                    if (currentCoordinate.Y != MAX_Y)
+                    if (_currentCoordinate.Y != MAX_Y)
                     {
-                        currentCoordinate.Y = currentCoordinate.Y + 1;
+                        _currentCoordinate.Y = _currentCoordinate.Y + 1;
                     }
                     break;
 
                 case Direction.West:
-                    if (currentCoordinate.X != MIN_X)
+                    if (_currentCoordinate.X != MIN_X)
                     {
-                        currentCoordinate.X = currentCoordinate.X - 1;
+                        _currentCoordinate.X = _currentCoordinate.X - 1;
                     }
                     break;
 
                 case Direction.South:
-                    if (currentCoordinate.Y != MIN_Y)
+                    if (_currentCoordinate.Y != MIN_Y)
                     {
-                        currentCoordinate.Y = currentCoordinate.Y - 1;
+                        _currentCoordinate.Y = _currentCoordinate.Y - 1;
                     }
                     break;
 
                 case Direction.East:
-                    if (currentCoordinate.X != MAX_X)
+                    if (_currentCoordinate.X != MAX_X)
                     {
-                        currentCoordinate.X = currentCoordinate.X + 1;
+                        _currentCoordinate.X = _currentCoordinate.X + 1;
                     }
                     break;
 
@@ -73,39 +73,39 @@ namespace Robot
 
         public Direction CurrentFacing()
         {
-            return currentDirection;
+            return CurrentDirection;
         }
 
         public Coordinate CurrentCoordinate()
         {
-            return currentCoordinate;
+            return _currentCoordinate;
         }
 
         public void RotateLeft()
         {
-            var newDirection = ShiftLeft(currentDirection);
+            var newDirection = ShiftLeft(CurrentDirection);
 
             if (IsBitOverflow(newDirection))
             {
-                currentDirection = Direction.East;
+                CurrentDirection = Direction.East;
             }
             else
             {
-                currentDirection = newDirection;
+                CurrentDirection = newDirection;
             }
         }
 
         public void RotateRight()
         {
-            var newDirection = ShiftRight(currentDirection);
+            var newDirection = ShiftRight(CurrentDirection);
 
             if (IsBitOverflow(newDirection))
             {
-                currentDirection = Direction.South;
+                CurrentDirection = Direction.South;
             }
             else
             {
-                currentDirection = newDirection;
+                CurrentDirection = newDirection;
             }
         }
 
