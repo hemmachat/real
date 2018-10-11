@@ -9,6 +9,6 @@ namespace Robot.Interfaces
         void RotateLeft();
         void RotateRight();
         Direction CurrentFacing();
-
+        void Move();
     }
 }

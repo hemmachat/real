@@ -9,9 +9,14 @@ namespace Robot
     {
         private Direction currentDirection;
 
-        public Movement()
+        public Movement(Direction direction)
         {
-            currentDirection = Direction.North;
+            currentDirection = direction;
+        }
+
+        public void Move()
+        {
+
         }
 
         public Direction CurrentFacing()
@@ -21,7 +26,7 @@ namespace Robot
 
         public void RotateLeft()
         {
-            int newDirection = (int)currentDirection << 1;
+            var newDirection = ShiftLeft(currentDirection);
 
             if (IsBitOverflow(newDirection))
             {
@@ -29,13 +34,13 @@ namespace Robot
             }
             else
             {
-                AssignNewDirection((Direction)newDirection);
+                currentDirection = newDirection;
             }
         }
 
         public void RotateRight()
         {
-            int newDirection = (int)currentDirection >> 1;
+            var newDirection = ShiftRight(currentDirection);
 
             if (IsBitOverflow(newDirection))
             {
@@ -43,18 +48,23 @@ namespace Robot
             }
             else
             {
-                AssignNewDirection((Direction)newDirection);
+                currentDirection = newDirection;
             }
         }
 
-        private bool IsBitOverflow(int value)
+        private bool IsBitOverflow(Direction direction)
         {
-            return value == 0;
+            return direction < Direction.East || direction > Direction.South;
         }
 
-        private void AssignNewDirection(Direction newDirection)
+        private Direction ShiftLeft(Direction direction)
         {
-            currentDirection = newDirection;
+            return (Direction)((int)direction << 1);
+        }
+
+        private Direction ShiftRight(Direction direction)
+        {
+            return (Direction)((int)direction >> 1);
         }
     }
 }
