@@ -17,7 +17,8 @@ namespace Robot
 
         public void Place(Coordinate coordinate, Direction direction)
         {
-            
+            _movement.CurrentCoordinate = coordinate;
+            _movement.CurrentDirection = direction;
         }
 
         public void Left()

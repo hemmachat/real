@@ -14,7 +14,7 @@ namespace RobotTest
             var m = new Movement(Direction.North);
             m.RotateLeft();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateRight();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -66,7 +66,7 @@ namespace RobotTest
             var m = new Movement(Direction.North);
             m.RotateRight();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateLeft();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -86,7 +86,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -97,7 +97,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -109,7 +109,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         // West
@@ -119,7 +119,7 @@ namespace RobotTest
             var m = new Movement(Direction.West);
             m.RotateLeft();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -129,7 +129,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateRight();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -139,7 +139,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -150,7 +150,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -162,7 +162,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -171,7 +171,7 @@ namespace RobotTest
             var m = new Movement(Direction.West);
             m.RotateRight();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -181,7 +181,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateLeft();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -191,7 +191,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -202,7 +202,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -214,7 +214,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         // East
@@ -224,7 +224,7 @@ namespace RobotTest
             var m = new Movement(Direction.East);
             m.RotateLeft();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -234,7 +234,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateRight();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -244,7 +244,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -255,7 +255,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -267,7 +267,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -276,7 +276,7 @@ namespace RobotTest
             var m = new Movement(Direction.East);
             m.RotateRight();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -286,7 +286,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateLeft();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -296,7 +296,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -307,7 +307,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -319,7 +319,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         // South
@@ -329,7 +329,7 @@ namespace RobotTest
             var m = new Movement(Direction.South);
             m.RotateLeft();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -339,7 +339,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateRight();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -349,7 +349,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -360,7 +360,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -372,7 +372,7 @@ namespace RobotTest
             m.RotateLeft();
             m.RotateLeft();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -381,7 +381,7 @@ namespace RobotTest
             var m = new Movement(Direction.South);
             m.RotateRight();
 
-            Assert.Equal(Direction.West, m.CurrentFacing());
+            Assert.Equal(Direction.West, m.CurrentDirection);
         }
 
         [Fact]
@@ -391,7 +391,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateLeft();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
 
         [Fact]
@@ -401,7 +401,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.North, m.CurrentFacing());
+            Assert.Equal(Direction.North, m.CurrentDirection);
         }
 
         [Fact]
@@ -412,7 +412,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.East, m.CurrentFacing());
+            Assert.Equal(Direction.East, m.CurrentDirection);
         }
 
         [Fact]
@@ -424,7 +424,7 @@ namespace RobotTest
             m.RotateRight();
             m.RotateRight();
 
-            Assert.Equal(Direction.South, m.CurrentFacing());
+            Assert.Equal(Direction.South, m.CurrentDirection);
         }
     }
 }

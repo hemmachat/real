@@ -7,9 +7,10 @@ namespace Robot.Interfaces
 {
     public interface IMovement
     {
+        Coordinate CurrentCoordinate { get; set; }
+        Direction CurrentDirection { get; set; }
         void RotateLeft();
         void RotateRight();
-        Direction CurrentFacing();
         void Move();
     }
 }

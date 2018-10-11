@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Robot.Models
 {
-    public struct Coordinate
+    public class Coordinate
     {
         public Coordinate(int x, int y)
         {
