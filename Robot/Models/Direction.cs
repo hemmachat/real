@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Robot
+namespace Robot.Models
 {
     /// <summary>
     /// Binary number translation to use for bit shifting operation e.g. shift left when rotate left

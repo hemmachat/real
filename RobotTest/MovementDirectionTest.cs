@@ -1,10 +1,11 @@
 using Robot;
+using Robot.Models;
 using System;
 using Xunit;
 
 namespace RobotTest
 {
-    public class MovementTest
+    public class MovementDirectionTest
     {
         // North
         [Fact]
