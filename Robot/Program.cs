@@ -24,7 +24,8 @@ namespace Robot
         public static IContainer ConfigureContainer()
         {
             var builder = new ContainerBuilder();
-
+            builder.RegisterType<Movement>().As<IMovement>();
+            builder.RegisterType<Robot>().As<IRobot>();
             builder.RegisterType<Application>().As<IApplication>();
 
             return builder.Build();

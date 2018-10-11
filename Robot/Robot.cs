@@ -1,4 +1,5 @@
 ﻿using Robot.Interfaces;
+using Robot.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,24 +8,31 @@ namespace Robot
 {
     public class Robot : IRobot
     {
-        public void Place()
+        private readonly IMovement _movement;
+
+        public Robot(IMovement movement)
         {
-            throw new NotImplementedException();
+            _movement = movement;
+        }
+
+        public void Place(Coordinate coordinate, Direction direction)
+        {
+            
         }
 
         public void Left()
         {
-            throw new NotImplementedException();
+            _movement.RotateLeft();
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            _movement.RotateRight();
         }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            _movement.Move();
         }
 
         public void Report()
