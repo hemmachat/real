@@ -8,10 +8,6 @@ namespace Robot
 {
     public class Movement : IMovement
     {
-        const int MAX_Y = 4;
-        const int MAX_X = 4;
-        const int MIN_Y = 0;
-        const int MIN_X = 0;
         public Coordinate CurrentCoordinate { get; set; }
 
         public Direction CurrentDirection { get; set; }
@@ -39,28 +35,28 @@ namespace Robot
             switch (CurrentDirection)
             {
                 case Direction.North:
-                    if (CurrentCoordinate.Y != MAX_Y)
+                    if (Table.CanMoveNorth(CurrentCoordinate))
                     {
                         CurrentCoordinate.Y = CurrentCoordinate.Y + 1;
                     }
                     break;
 
                 case Direction.West:
-                    if (CurrentCoordinate.X != MIN_X)
+                    if (Table.CanMoveWest(CurrentCoordinate))
                     {
                         CurrentCoordinate.X = CurrentCoordinate.X - 1;
                     }
                     break;
 
                 case Direction.South:
-                    if (CurrentCoordinate.Y != MIN_Y)
+                    if (Table.CanMoveSouth(CurrentCoordinate))
                     {
                         CurrentCoordinate.Y = CurrentCoordinate.Y - 1;
                     }
                     break;
 
                 case Direction.East:
-                    if (CurrentCoordinate.X != MAX_X)
+                    if (Table.CanMoveEast(CurrentCoordinate))
                     {
                         CurrentCoordinate.X = CurrentCoordinate.X + 1;
                     }

@@ -48,7 +48,7 @@ namespace RobotTest
             m.RotateLeft();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(0, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 0));
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(3, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 3));
         }
 
         // origin-bottom-left
@@ -72,7 +72,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(0, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 1));
         }
 
         [Fact]
@@ -82,7 +82,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(1, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 0));
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(0, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 0));
         }
 
         [Fact]
@@ -102,7 +102,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(0, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 0));
         }
 
         // top-left
@@ -113,7 +113,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(0, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 4));
         }
 
         [Fact]
@@ -123,7 +123,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(0, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 4));
         }
 
         [Fact]
@@ -133,7 +133,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(0, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 3));
         }
 
         [Fact]
@@ -143,7 +143,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(1, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 4));
         }
 
         // top-right
@@ -154,7 +154,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(4, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 4));
         }
 
         [Fact]
@@ -164,7 +164,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(3, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 4));
         }
 
         [Fact]
@@ -174,7 +174,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(4, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 3));
         }
 
         [Fact]
@@ -184,7 +184,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(4, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 4));
         }
 
         // bottom-right
@@ -195,7 +195,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(4, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 1));
         }
 
         [Fact]
@@ -205,7 +205,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(3, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 0));
         }
 
         [Fact]
@@ -215,7 +215,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(4, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 0));
         }
 
         [Fact]
@@ -225,7 +225,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(4, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 0));
         }
 
         // center
@@ -236,7 +236,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(2, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 3));
         }
 
         [Fact]
@@ -246,7 +246,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(1, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 2));
         }
 
         [Fact]
@@ -256,7 +256,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(2, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 1));
         }
 
         [Fact]
@@ -266,7 +266,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(3, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 2));
         }
 
         // top edge
@@ -277,7 +277,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(2, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 4));
         }
 
         [Fact]
@@ -287,7 +287,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(1, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 4));
         }
 
         [Fact]
@@ -297,7 +297,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(2, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 3));
         }
 
         [Fact]
@@ -307,7 +307,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(3, 4).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 4));
         }
 
         // left edge
@@ -318,7 +318,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(0, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 3));
         }
 
         [Fact]
@@ -328,7 +328,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(0, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 2));
         }
 
         [Fact]
@@ -338,7 +338,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(0, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 1));
         }
 
         [Fact]
@@ -348,7 +348,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(1, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 2));
         }
 
         // bottom edge
@@ -359,7 +359,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(2, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 1));
         }
 
         [Fact]
@@ -369,7 +369,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(1, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(1, 0));
         }
 
         [Fact]
@@ -379,7 +379,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(2, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 0));
         }
 
         [Fact]
@@ -389,7 +389,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(3, 0).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 0));
         }
 
         // right edge
@@ -400,7 +400,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(4, 3).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 3));
         }
 
         [Fact]
@@ -410,7 +410,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.West, m.CurrentDirection);
-            new Coordinate(3, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(3, 2));
         }
 
         [Fact]
@@ -420,7 +420,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(4, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 1));
         }
 
         [Fact]
@@ -430,7 +430,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.East, m.CurrentDirection);
-            new Coordinate(4, 2).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(4, 2));
         }
     }
 }
