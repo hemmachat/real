@@ -28,7 +28,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.South, m.CurrentDirection);
-            new Coordinate(2, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(2, 1));
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace RobotTest
             m.Move();
 
             Assert.Equal(Direction.North, m.CurrentDirection);
-            new Coordinate(0, 1).Should().BeEquivalentTo(m.CurrentCoordinate);
+            m.CurrentCoordinate.Should().BeEquivalentTo(new Coordinate(0, 1));
         }
 
         [Fact]
