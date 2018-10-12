@@ -9,6 +9,7 @@ namespace Robot
     public class Robot : IRobot
     {
         private readonly IMovement _movement;
+        private bool _hasPlaced;
 
         public Robot(IMovement movement)
         {
@@ -17,28 +18,51 @@ namespace Robot
 
         public void Place(Coordinate coordinate, Direction direction)
         {
-            _movement.CurrentCoordinate = coordinate;
-            _movement.CurrentDirection = direction;
+            if (Table.HasValidCoordinate(coordinate))
+            {
+                _hasPlaced = true;
+                _movement.CurrentCoordinate = coordinate;
+                _movement.CurrentDirection = direction;
+            }
         }
 
         public void Left()
         {
-            _movement.RotateLeft();
+            if (CanExecuteCommand())
+            {
+                _movement.RotateLeft();
+            }
         }
 
         public void Right()
         {
-            _movement.RotateRight();
+            if (CanExecuteCommand())
+            {
+                _movement.RotateRight();
+            }
         }
 
         public void Move()
         {
-            _movement.Move();
+            if (CanExecuteCommand())
+            {
+                _movement.Move();
+            }
         }
 
-        public void Report()
+        public string Report()
         {
-            throw new NotImplementedException();
+            if (CanExecuteCommand())
+            {
+                return $"{_movement.CurrentCoordinate.X}, {_movement.CurrentCoordinate.Y}, {_movement.CurrentDirection.ToString().ToUpper()}";
+            }
+
+            return string.Empty;
+        }
+
+        private bool CanExecuteCommand()
+        {
+            return _hasPlaced && Table.HasValidCoordinate(_movement.CurrentCoordinate);
         }
     }
 }

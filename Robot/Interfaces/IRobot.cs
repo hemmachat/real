@@ -9,7 +9,7 @@ namespace Robot.Interfaces
     {
         void Move();
         void Place(Coordinate coordinate, Direction direction);
-        void Report();
+        string Report();
         void Left();
         void Right();
 
