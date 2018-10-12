@@ -69,32 +69,32 @@ namespace Robot
 
         public void RotateLeft()
         {
-            var newDirection = ShiftLeft(CurrentDirection);
-
-            if (IsBitOverflow(newDirection))
-            {
-                CurrentDirection = Direction.East;
-            }
-            else
-            {
-                CurrentDirection = newDirection;
-            }
+            ChangeDirection(ShiftLeft(CurrentDirection));
         }
 
         public void RotateRight()
         {
-            var newDirection = ShiftRight(CurrentDirection);
+            ChangeDirection(ShiftRight(CurrentDirection), false);
+        }
 
-            if (IsBitOverflow(newDirection))
+        private void ChangeDirection(Direction direction, bool isLeft = true)
+        {
+            if (IsBitOverflow(direction))
             {
-                CurrentDirection = Direction.South;
+                if (isLeft)
+                {
+                    CurrentDirection = Direction.East;
+                }
+                else
+                {
+                    CurrentDirection = Direction.South;
+                }
             }
             else
             {
-                CurrentDirection = newDirection;
+                CurrentDirection = direction;
             }
         }
-
         private bool IsBitOverflow(Direction direction)
         {
             return direction < Direction.East || direction > Direction.South;
