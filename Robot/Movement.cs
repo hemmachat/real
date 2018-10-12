@@ -77,11 +77,11 @@ namespace Robot
             ChangeDirection(ShiftRight(CurrentDirection), false);
         }
 
-        private void ChangeDirection(Direction direction, bool isLeft = true)
+        private void ChangeDirection(Direction direction, bool turningLeft = true)
         {
             if (IsBitOverflow(direction))
             {
-                if (isLeft)
+                if (turningLeft)
                 {
                     CurrentDirection = Direction.East;
                 }
@@ -95,6 +95,7 @@ namespace Robot
                 CurrentDirection = direction;
             }
         }
+
         private bool IsBitOverflow(Direction direction)
         {
             return direction < Direction.East || direction > Direction.South;
