@@ -24,6 +24,8 @@ namespace Robot
         public static IContainer ConfigureContainer()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<ConsoleInput>().As<IUserInput>();
+            builder.RegisterType<ConsoleOutput>().As<IUserOutput>();
             builder.RegisterType<Movement>().As<IMovement>();
             builder.RegisterType<Robot>().As<IRobot>();
             builder.RegisterType<Application>().As<IApplication>();
