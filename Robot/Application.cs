@@ -24,14 +24,14 @@ namespace Robot
         {
             var line = _input.ReadLine();
 
-            while (line != Environment.NewLine)
+            while (line != "q" && line != "")
             {
                 var command = _commandParser.Parse(line);
 
                 switch (command.Item1)
                 {
                     case Models.RobotCommandType.Place:
-                        _robot.Place(new Models.Coordinate(0, 0), Models.Direction.North);
+                        _robot.Place(command.Item2, command.Item3);
                         break;
 
                     case Models.RobotCommandType.Move:
@@ -54,9 +54,9 @@ namespace Robot
                         _output.ShowMessage("Bad command or filename.");
                         break;
                 }
-            }
 
-            Console.ReadLine();
+                line = _input.ReadLine();
+            }
         }
     }
 }

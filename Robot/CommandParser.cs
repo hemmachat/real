@@ -10,52 +10,62 @@ namespace Robot
     public class CommandParser : ICommandParser
     {
         private const string PLACE = "place";
+        private const string MOVE = "move";
+        private const string LEFT = "left";
+        private const string RIGHT = "right";
+        private const string REPORT = "report";
 
-        public (RobotCommandType, string[]) Parse(string line)
+        public (RobotCommandType, Coordinate, Direction) Parse(string line)
         {
             line = line.Trim().ToLower();
 
-            if (line.StartsWith(PLACE))
+            switch (line)
             {
-                var parameters = line.Substring(PLACE.Length + 1).Trim().Split(',');
+                case var testLine when testLine.StartsWith(PLACE) && testLine.Length > PLACE.Length:
+                    return PlaceCommand(line);
 
-                if (parameters.Length != 3)
-                {
-                    return (RobotCommandType.Invalid, null);
-                }
+                case var testLine when testLine.Equals(MOVE):
+                    return (RobotCommandType.Move, null, Direction.North);
 
-                Coordinate coordinate;
+                case var testLine when testLine.Equals(LEFT):
+                    return (RobotCommandType.Left, null, Direction.North);
 
-                if (!HasValidCoordinate(parameters[0], parameters[1], out coordinate))
-                {
-                    return (RobotCommandType.Invalid, null);
-                }
+                case var testLine when testLine.Equals(RIGHT):
+                    return (RobotCommandType.Right, null, Direction.North);
 
-                if (!HasValidDirection(parameters[2]))
-                {
-                    return (RobotCommandType.Invalid, null);
-                }
+                case var testLine when testLine.Equals(REPORT):
+                    return (RobotCommandType.Report, null, Direction.North);
 
-                return (RobotCommandType.Place, new string[] { "P" } );
+                default:
+                    return (RobotCommandType.Invalid, null, Direction.North);
             }
-            else if (line.Equals("move"))
+        }
+
+        private (RobotCommandType, Coordinate, Direction) PlaceCommand(string line)
+        {
+            var parameters = line.Substring(PLACE.Length + 1).Trim().Split(',');
+
+            if (parameters.Length != 3)
             {
-                return (RobotCommandType.Move, null);
-            }
-            else if (line.Equals("left"))
-            {
-                return (RobotCommandType.Left, null);
-            }
-            else if (line.Equals("right"))
-            {
-                return (RobotCommandType.Right, null);
-            }
-            else if (line.Equals("report"))
-            {
-                return (RobotCommandType.Report, null);
+                return InvalidCommand();
             }
 
-            return (RobotCommandType.Invalid, null);
+            if (!HasValidCoordinate(parameters[0].Trim(), parameters[1].Trim(), out Coordinate coordinate))
+            {
+                return InvalidCommand();
+            }
+
+            if (!HasValidDirection(parameters[2].Trim(), out Direction direction))
+            {
+                return InvalidCommand();
+            }
+
+            return (RobotCommandType.Place, coordinate, direction);
+        }
+
+        private (RobotCommandType, Coordinate, Direction) InvalidCommand()
+        {
+            return (RobotCommandType.Invalid, null, Direction.North);
         }
 
         private bool HasValidCoordinate(string param1, string param2, out Coordinate coordinate)
@@ -74,14 +84,16 @@ namespace Robot
             return true;
         }
 
-        private bool HasValidDirection(string value)
+        private bool HasValidDirection(string value, out Direction direction)
         {
-            foreach (var direction in Enum.GetValues(typeof(Direction)))
-            {
-                var d = (string)direction;
+            direction = Direction.North;
 
-                if (d.Equals(value))
+            foreach (var di in Enum.GetValues(typeof(Direction)))
+            {
+                if (((Direction)di).ToString().ToLower().Equals(value))
                 {
+                    direction = (Direction)di;
+
                     return true;
                 }
             }

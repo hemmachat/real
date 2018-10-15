@@ -7,6 +7,6 @@ namespace Robot.Interfaces
 {
     public interface ICommandParser
     {
-        (RobotCommandType, string[]) Parse(string line);
+        (RobotCommandType, Coordinate, Direction) Parse(string line);
     }
 }
