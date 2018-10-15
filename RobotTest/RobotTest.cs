@@ -30,7 +30,7 @@ namespace RobotTest
             _robot.Place(new Robot.Models.Coordinate(0, 0), Robot.Models.Direction.North);
             _robot.Move();
 
-            _robot.Report().Should().BeEquivalentTo("0, 1, NORTH");
+            _robot.Report().Should().BeEquivalentTo("0,1,NORTH");
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace RobotTest
             _robot.Place(new Robot.Models.Coordinate(0, 0), Robot.Models.Direction.North);
             _robot.Left();
 
-            _robot.Report().Should().BeEquivalentTo("0, 0, WEST");
+            _robot.Report().Should().BeEquivalentTo("0,0,WEST");
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace RobotTest
             _robot.Left();
             _robot.Move();
 
-            _robot.Report().Should().BeEquivalentTo("3, 3, NORTH");
+            _robot.Report().Should().BeEquivalentTo("3,3,NORTH");
         }
     }
 }

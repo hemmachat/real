@@ -54,7 +54,7 @@ namespace Robot
         {
             if (CanExecuteCommand())
             {
-                return $"{_movement.CurrentCoordinate.X}, {_movement.CurrentCoordinate.Y}, {_movement.CurrentDirection.ToString().ToUpper()}";
+                return $"{_movement.CurrentCoordinate.X},{_movement.CurrentCoordinate.Y},{_movement.CurrentDirection.ToString().ToUpper()}";
             }
 
             return string.Empty;

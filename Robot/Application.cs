@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Robot.Models;
 
 namespace Robot
 {
@@ -24,29 +25,29 @@ namespace Robot
         {
             var line = _input.ReadLine();
 
-            while (line != "q" && line != "")
+            while (line != null && line != "q" && line != "")
             {
                 var command = _commandParser.Parse(line);
 
                 switch (command.Item1)
                 {
-                    case Models.RobotCommandType.Place:
+                    case RobotCommandType.Place:
                         _robot.Place(command.Item2, command.Item3);
                         break;
 
-                    case Models.RobotCommandType.Move:
+                    case RobotCommandType.Move:
                         _robot.Move();
                         break;
 
-                    case Models.RobotCommandType.Left:
+                    case RobotCommandType.Left:
                         _robot.Left();
                         break;
 
-                    case Models.RobotCommandType.Right:
+                    case RobotCommandType.Right:
                         _robot.Right();
                         break;
 
-                    case Models.RobotCommandType.Report:
+                    case RobotCommandType.Report:
                         _output.ShowMessage(_robot.Report());
                         break;
 
