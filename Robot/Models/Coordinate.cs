@@ -7,6 +7,11 @@ namespace Robot.Models
 {
     public class Coordinate
     {
+        /// <summary>
+        /// Coordinate
+        /// </summary>
+        /// <param name="x">X coordinate</param>
+        /// <param name="y">Y coordinate</param>
         public Coordinate(int x, int y)
         {
             X = x;

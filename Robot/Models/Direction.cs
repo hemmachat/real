@@ -6,7 +6,7 @@ using System.Text;
 namespace Robot.Models
 {
     /// <summary>
-    /// Binary number translation to use for bit shifting operation e.g. shift left when rotate left
+    /// Direction (binary number translation to use for bit shifting operation e.g. shift left when rotate left)
     /// </summary>
     public enum Direction
     {

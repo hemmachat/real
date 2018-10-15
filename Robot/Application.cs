@@ -21,10 +21,14 @@ namespace Robot
             _commandParser = commandParser;
         }
 
+        /// <summary>
+        /// Main application
+        /// </summary>
         public void Run()
         {
             var line = _input.ReadLine();
 
+            // type 'q' or empty line to quit
             while (line != null && line != "q" && line != "")
             {
                 var command = _commandParser.Parse(line);
