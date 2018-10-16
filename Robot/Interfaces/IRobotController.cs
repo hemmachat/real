@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Robot.Interfaces
 {
-    public interface IApplication
+    public interface IRobotController
     {
         void Run();
     }

@@ -12,7 +12,7 @@ namespace Robot
 
             using (var scope = container.BeginLifetimeScope())
             {
-                var app = scope.Resolve<IApplication>();
+                var app = scope.Resolve<IRobotController>();
                 app.Run();
             }
         }
@@ -29,7 +29,7 @@ namespace Robot
             builder.RegisterType<ConsoleOutput>().As<IUserOutput>();
             builder.RegisterType<Movement>().As<IMovement>();
             builder.RegisterType<Robot>().As<IRobot>();
-            builder.RegisterType<Application>().As<IApplication>();
+            builder.RegisterType<RobotController>().As<IRobotController>();
 
             return builder.Build();
         }

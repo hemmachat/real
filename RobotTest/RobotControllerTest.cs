@@ -7,7 +7,7 @@ using Xunit;
 
 namespace RobotTest
 {
-    public class ApplicationTest
+    public class RobotControllerTest
     {
         [Fact]
         public void Example_A()
