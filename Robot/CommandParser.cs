@@ -39,7 +39,7 @@ namespace Robot
             switch (line)
             {
                 case var testLine when testLine.StartsWith(PLACE) && testLine.Length > PLACE.Length:
-                    return ExtractPlaceCommand(line);
+                    return CreatePlaceCommand(line);
 
                 case var testLine when testLine.Equals(MOVE):
                     return (RobotCommandType.Move, null, Direction.North);
@@ -59,11 +59,11 @@ namespace Robot
         }
 
         /// <summary>
-        /// Extract parameters for 'PLACE' command
+        /// Create parameters for 'PLACE' command
         /// </summary>
         /// <param name="line">String command</param>
         /// <returns>PLACE command type, coordinate, direction</returns>
-        private (RobotCommandType, Coordinate, Direction) ExtractPlaceCommand(string line)
+        private (RobotCommandType, Coordinate, Direction) CreatePlaceCommand(string line)
         {
             int parametersStartIndex = PLACE.Length + PARAMETERS_POSITION;
             var parameters = line.Substring(parametersStartIndex).Trim().Split(SEPARATOR);
