@@ -35,7 +35,7 @@ namespace Robot
         }
 
         /// <summary>
-        /// Check if we can move move north from the coordinate
+        /// Check if we can move north from the coordinate
         /// </summary>
         /// <param name="coordinate">Coordinate to check</param>
         /// <returns>True if we can move north</returns>
@@ -45,7 +45,7 @@ namespace Robot
         }
 
         /// <summary>
-        /// Check if we can move move west from the coordinate
+        /// Check if we can move west from the coordinate
         /// </summary>
         /// <param name="coordinate">Coordinate to check</param>
         /// <returns>True if we can move west</returns>
@@ -55,7 +55,7 @@ namespace Robot
         }
 
         /// <summary>
-        /// Check if we can move move south from the coordinate
+        /// Check if we can move south from the coordinate
         /// </summary>
         /// <param name="coordinate">Coordinate to check</param>
         /// <returns>True if we can move south</returns>
@@ -65,7 +65,7 @@ namespace Robot
         }
 
         /// <summary>
-        /// Check if we can move move south from the coordinate
+        /// Check if we can move east from the coordinate
         /// </summary>
         /// <param name="coordinate">Coordinate to check</param>
         /// <returns>True if we can move south</returns>
