@@ -132,6 +132,17 @@ namespace RobotTest
         }
 
         [Fact]
+        public void Invalid_Coordinate_Y_Right_Valid_Commands()
+        {
+            var input = $"PLACE 0,-1,NORTH{Environment.NewLine}RIGHT{Environment.NewLine}PLACE 0,0,NORTH{Environment.NewLine}MOVE{Environment.NewLine}REPORT{Environment.NewLine}{Environment.NewLine}";
+            var expected = $"0,1,NORTH{Environment.NewLine}";
+
+            var actual = TestConsole(input);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Invalid_Command()
         {
             var input = $"hello{Environment.NewLine}";
